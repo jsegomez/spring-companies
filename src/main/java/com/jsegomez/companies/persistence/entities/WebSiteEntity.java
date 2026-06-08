@@ -1,6 +1,5 @@
 package com.jsegomez.companies.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.jsegomez.companies.domain.enums.Category;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -15,7 +14,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class WebSite implements Serializable {
+public class WebSiteEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
@@ -27,9 +26,9 @@ public class WebSite implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_company")
-    private Company company;
+    private CompanyEntity company;
 
-    public WebSite(String name, Category category, Company company) {
+    public WebSiteEntity(String name, Category category, CompanyEntity company) {
         this.name = name;
         this.category = category;
         this.company = company;

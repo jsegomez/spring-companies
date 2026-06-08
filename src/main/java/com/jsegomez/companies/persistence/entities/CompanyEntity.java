@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Company {
+public class CompanyEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
@@ -26,7 +26,7 @@ public class Company {
     @Column(name = "foundation_date")
     private LocalDate foundationDate;
 
-    public Company(String name, String founder, String logo, LocalDate foundationDate) {
+    public CompanyEntity(String name, String founder, String logo, LocalDate foundationDate) {
         this.name = name;
         this.founder = founder;
         this.logo = logo;
