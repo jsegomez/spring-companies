@@ -39,7 +39,7 @@ application-local.properties
 application-prod.properties
 application-staging.properties
 application-*.properties
-!application.properties
+application.properties
 
 # YAML equivalents
 application-dev.yml
